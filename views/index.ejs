@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Only</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Members Only!</h1>
+    </header>
+
+    <% if (currentUser) { %>
+        <nav class="user-nav">
+            <div class="user-greeting">
+                <span>Welcome, <%= currentUser.first_name %>!</span>
+                <a href="/create-message" class="create-message-btn">Create a new message</a>
+            </div>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </nav>
+    <% } else { %>
+        <div class="auth-buttons">
+            <a href="/login">Login</a>
+            <a href="/sign-up">Sign Up</a>
+        </div>
+    <% } %>
+
+    <div class="messages-section">
+        <h2>Messages</h2>
+        <% messages.forEach(message => { %>
+            <div class="message">
+                <h3><%= message.title %></h3>
+                <p><%= message.text %></p>
+    
+                <% if (currentUser && currentUser.admin) { %> <!-- Show delete button if admin -->
+                    <form action="/delete-message/<%= message.id %>" method="POST" class="delete-form">
+                        <button type="submit" class="delete-btn">&times;</button> <!-- "X" symbol for delete -->
+                    </form>
+                <% } %>
+    
+                <% if (currentUser && currentUser.membership_status) { %>  <!-- Only show author and date if the user is a member -->
+                    <p>Author: <%= message.first_name %> <%= message.last_name %> | Date: <%= message.timestamp %></p>
+                <% } %>
+            </div>
+        <% }) %>
+    </div>
+    
+
+    <div class="join-club-section">
+        <h3>Join the Club</h3>
+        <p>Become a member of the exclusive club! Enter the secret passcode to join.</p>
+        <a href="/join-club" class="join-btn">Join Now</a>
+    </div>
+
+</body>
+</html>

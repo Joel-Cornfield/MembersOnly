@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Members Only</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Login to Members Only</h1>
+    </header>
+
+    <div class="form-container">
+        <h2>Login</h2>
+
+        <!-- Display flash message for login failure -->
+        <% if (flash.error) { %>
+            <div class="error-message">
+                <p><%= flash.error %></p>
+            </div>
+        <% } %>
+
+        <form action="/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Don't have an account? <a href="/sign-up">Sign Up</a></p>
+        <p><a href="/">Back to Home</a></p>
+    </footer>
+</body>
+</html>
