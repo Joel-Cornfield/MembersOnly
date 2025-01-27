@@ -1,6 +1,6 @@
 # Members Only
 
-"Members Only" is a web application where users can sign up, log in, and become members of an exclusive club. Once they become members, they can create, view, and delete messages. The app also includes a passcode feature to join the club, and admins can manage messages and users.
+"Members Only" is a web application where users can sign up, log in, and become members of an exclusive club. Once they become members, they can create, view, and delete messages. The app also includes a passcode feature to join the club, and admins can manage messages.
 
 ## Features
 
