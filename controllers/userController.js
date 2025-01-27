@@ -52,6 +52,6 @@ exports.joinClub = async (req, res) => {
             res.redirect('/login');  // Redirect if user ID is not available (shouldn't happen if authenticated)
         }
     } else {
-        res.render('join-club', { error: 'Incorrect passcode!' });
+        res.render('join-club', { messages: { error: 'Incorrect passcode! Please try again.' } });
     }
 };

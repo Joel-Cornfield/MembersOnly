@@ -34,7 +34,6 @@ exports.displayMessages = async (req, res) => {
   }
 };
 
-
 // Delete a message (only for admins) 
 exports.deleteMessage = async (req, res) => {
     const messageId = req.params.id;
