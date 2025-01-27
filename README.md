@@ -19,3 +19,29 @@
 - **bcryptjs**: For password hashing
 - **EJS**: Templating engine for rendering views
 - **dotenv**: For managing environment variables
+
+## Screenshots
+
+### Home Page
+![Home Page](public/assets/home-page.png)
+
+### Sign-Up Page
+![Sign Up](public/assets/sign-up.png)
+
+### Login Page
+![Login](public/assets/login.png)
+
+### Join Club
+![Join Club](public/assets/join-club.png)
+
+### Member Page
+![Member Page](public/assets/member.png)
+
+### Create New Message
+![Create Message](public/assets/create-message.png)
+
+### Admin View
+![Admin View](public/assets/admin.png)
+
+### Non-Members View
+![Non-Members View](public/assets/non-members.png)
