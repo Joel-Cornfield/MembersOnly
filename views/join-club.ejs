@@ -12,6 +12,13 @@
     </header>
 
     <div class="form-container">
+        <!-- Flash error message -->
+        <% if (messages && messages.error) { %>
+            <div class="flash-error">
+                <%= messages.error %>
+            </div>
+        <% } %>
+
         <form action="/join-club" method="POST">
             <label for="passcode">Enter secret passcode</label>
             <input type="text" name="passcode" placeholder="Secret passcode" required><br>

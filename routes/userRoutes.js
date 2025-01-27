@@ -20,7 +20,7 @@ router.post('/login', passport.authenticate('local', {
 
 // Join the club route (membership) 
 router.get('/join-club', (req, res) => {
-    res.render('join-club');
+    res.render('join-club', { messages: {} }) ;
 });
 router.post('/join-club', userController.joinClub);
 
